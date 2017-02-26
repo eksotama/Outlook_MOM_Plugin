@@ -920,7 +920,5 @@ namespace CalScanner
             meetingNotes.Height = 270;
             splitContainer1.Height = 360; 
         }
-
-
     }
 }

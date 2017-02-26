@@ -62,6 +62,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl_mom = new System.Windows.Forms.TabControl();
             this.tabPageCal = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.nextMeetingBody = new RicherTextBox.RicherTextBox();
+            this.nextmeetingEndTime = new System.Windows.Forms.ComboBox();
+            this.nextmeetingStartTime = new System.Windows.Forms.ComboBox();
             this.panel_next_meeting_atch1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_next_meeting_atch1 = new System.Windows.Forms.Button();
@@ -70,10 +74,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemDeleteNextMeetingAtch = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.nextMeetingBody = new RicherTextBox.RicherTextBox();
-            this.nextmeetingEndTime = new System.Windows.Forms.ComboBox();
-            this.nextmeetingStartTime = new System.Windows.Forms.ComboBox();
             this.buttonAttachFile_NextMeeting = new System.Windows.Forms.Button();
             this.pictureBox_next_meeting_help = new System.Windows.Forms.PictureBox();
             this.label_attendees = new System.Windows.Forms.Label();
@@ -137,6 +137,7 @@
             this.richTextBox_Action_Item_Decsr = new System.Windows.Forms.RichTextBox();
             this.labelAssignTo = new System.Windows.Forms.Label();
             this.listBox_AssgTo = new System.Windows.Forms.ListBox();
+            this.tabPage_note = new System.Windows.Forms.TabPage();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HiddenPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip_Info = new System.Windows.Forms.ToolTip(this.components);
@@ -166,10 +167,11 @@
             // tabControl_mom
             // 
             this.tabControl_mom.Controls.Add(this.tabPageCal);
-            this.tabControl_mom.Location = new System.Drawing.Point(0, -16);
+            this.tabControl_mom.Controls.Add(this.tabPage_note);
+            this.tabControl_mom.Location = new System.Drawing.Point(0, 0);
             this.tabControl_mom.Name = "tabControl_mom";
             this.tabControl_mom.SelectedIndex = 0;
-            this.tabControl_mom.Size = new System.Drawing.Size(1137, 758);
+            this.tabControl_mom.Size = new System.Drawing.Size(1137, 742);
             this.tabControl_mom.TabIndex = 12;
             // 
             // tabPageCal
@@ -215,9 +217,101 @@
             this.tabPageCal.Location = new System.Drawing.Point(4, 22);
             this.tabPageCal.Name = "tabPageCal";
             this.tabPageCal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCal.Size = new System.Drawing.Size(1129, 732);
+            this.tabPageCal.Size = new System.Drawing.Size(1129, 716);
             this.tabPageCal.TabIndex = 0;
+            this.tabPageCal.Text = "MOM";
             this.tabPageCal.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBox1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.ForeColor = System.Drawing.Color.Black;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(244, 186);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(250, 107);
+            this.listBox1.TabIndex = 50;
+            this.listBox1.Visible = false;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyDown);
+            this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
+            // 
+            // nextMeetingBody
+            // 
+            this.nextMeetingBody.AlignCenterVisible = true;
+            this.nextMeetingBody.AlignLeftVisible = true;
+            this.nextMeetingBody.AlignRightVisible = true;
+            this.nextMeetingBody.BoldVisible = true;
+            this.nextMeetingBody.BulletsVisible = false;
+            this.nextMeetingBody.ChooseFontVisible = true;
+            this.nextMeetingBody.FindReplaceVisible = true;
+            this.nextMeetingBody.FontColorVisible = false;
+            this.nextMeetingBody.FontFamilyVisible = true;
+            this.nextMeetingBody.FontSizeVisible = true;
+            this.nextMeetingBody.GroupAlignmentVisible = true;
+            this.nextMeetingBody.GroupBoldUnderlineItalicVisible = true;
+            this.nextMeetingBody.GroupFontColorVisible = false;
+            this.nextMeetingBody.GroupFontNameAndSizeVisible = true;
+            this.nextMeetingBody.GroupIndentationAndBulletsVisible = false;
+            this.nextMeetingBody.GroupInsertVisible = false;
+            this.nextMeetingBody.GroupSaveAndLoadVisible = true;
+            this.nextMeetingBody.GroupZoomVisible = false;
+            this.nextMeetingBody.INDENT = 10;
+            this.nextMeetingBody.IndentVisible = false;
+            this.nextMeetingBody.InsertPictureVisible = false;
+            this.nextMeetingBody.ItalicVisible = true;
+            this.nextMeetingBody.LoadVisible = true;
+            this.nextMeetingBody.Location = new System.Drawing.Point(500, 154);
+            this.nextMeetingBody.Name = "nextMeetingBody";
+            this.nextMeetingBody.OutdentVisible = false;
+            this.nextMeetingBody.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3081{\\fonttbl{\\f0\\fnil\\fcharset204 Microsoft" +
+    " Sans Serif;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs18\\par\r\n}\r\n";
+            this.nextMeetingBody.SaveVisible = true;
+            this.nextMeetingBody.SeparatorAlignVisible = true;
+            this.nextMeetingBody.SeparatorBoldUnderlineItalicVisible = true;
+            this.nextMeetingBody.SeparatorFontColorVisible = true;
+            this.nextMeetingBody.SeparatorFontVisible = true;
+            this.nextMeetingBody.SeparatorIndentAndBulletsVisible = false;
+            this.nextMeetingBody.SeparatorInsertVisible = false;
+            this.nextMeetingBody.SeparatorSaveLoadVisible = true;
+            this.nextMeetingBody.Size = new System.Drawing.Size(623, 187);
+            this.nextMeetingBody.TabIndex = 64;
+            this.nextMeetingBody.ToolStripVisible = true;
+            this.nextMeetingBody.UnderlineVisible = true;
+            this.nextMeetingBody.WordWrapVisible = true;
+            this.nextMeetingBody.ZoomFactorTextVisible = false;
+            this.nextMeetingBody.ZoomInVisible = false;
+            this.nextMeetingBody.ZoomOutVisible = false;
+            this.nextMeetingBody.Load += new System.EventHandler(this.nextMeetingBody_Load);
+            this.nextMeetingBody.Enter += new System.EventHandler(this.nextMeetingBody_Enter);
+            this.nextMeetingBody.Leave += new System.EventHandler(this.nextMeetingBody_Leave);
+            // 
+            // nextmeetingEndTime
+            // 
+            this.nextmeetingEndTime.DropDownHeight = 90;
+            this.nextmeetingEndTime.DropDownWidth = 50;
+            this.nextmeetingEndTime.Font = new System.Drawing.Font("Californian FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextmeetingEndTime.FormattingEnabled = true;
+            this.nextmeetingEndTime.IntegralHeight = false;
+            this.nextmeetingEndTime.Location = new System.Drawing.Point(306, 218);
+            this.nextmeetingEndTime.Name = "nextmeetingEndTime";
+            this.nextmeetingEndTime.Size = new System.Drawing.Size(126, 24);
+            this.nextmeetingEndTime.TabIndex = 66;
+            // 
+            // nextmeetingStartTime
+            // 
+            this.nextmeetingStartTime.DropDownHeight = 90;
+            this.nextmeetingStartTime.DropDownWidth = 50;
+            this.nextmeetingStartTime.Font = new System.Drawing.Font("Californian FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextmeetingStartTime.FormattingEnabled = true;
+            this.nextmeetingStartTime.IntegralHeight = false;
+            this.nextmeetingStartTime.Location = new System.Drawing.Point(306, 184);
+            this.nextmeetingStartTime.Name = "nextmeetingStartTime";
+            this.nextmeetingStartTime.Size = new System.Drawing.Size(126, 24);
+            this.nextmeetingStartTime.TabIndex = 65;
             // 
             // panel_next_meeting_atch1
             // 
@@ -319,97 +413,6 @@
             this.toolStripMenuItemDeleteNextMeetingAtch.Text = "Delete";
             this.toolStripMenuItemDeleteNextMeetingAtch.Click += new System.EventHandler(this.toolStripMenuItemDeleteNextMeetingAtch_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.Color.Black;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(244, 186);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(250, 107);
-            this.listBox1.TabIndex = 50;
-            this.listBox1.Visible = false;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyDown);
-            this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
-            // 
-            // nextMeetingBody
-            // 
-            this.nextMeetingBody.AlignCenterVisible = true;
-            this.nextMeetingBody.AlignLeftVisible = true;
-            this.nextMeetingBody.AlignRightVisible = true;
-            this.nextMeetingBody.BoldVisible = true;
-            this.nextMeetingBody.BulletsVisible = false;
-            this.nextMeetingBody.ChooseFontVisible = true;
-            this.nextMeetingBody.FindReplaceVisible = true;
-            this.nextMeetingBody.FontColorVisible = false;
-            this.nextMeetingBody.FontFamilyVisible = true;
-            this.nextMeetingBody.FontSizeVisible = true;
-            this.nextMeetingBody.GroupAlignmentVisible = true;
-            this.nextMeetingBody.GroupBoldUnderlineItalicVisible = true;
-            this.nextMeetingBody.GroupFontColorVisible = false;
-            this.nextMeetingBody.GroupFontNameAndSizeVisible = true;
-            this.nextMeetingBody.GroupIndentationAndBulletsVisible = false;
-            this.nextMeetingBody.GroupInsertVisible = false;
-            this.nextMeetingBody.GroupSaveAndLoadVisible = true;
-            this.nextMeetingBody.GroupZoomVisible = false;
-            this.nextMeetingBody.INDENT = 10;
-            this.nextMeetingBody.IndentVisible = false;
-            this.nextMeetingBody.InsertPictureVisible = false;
-            this.nextMeetingBody.ItalicVisible = true;
-            this.nextMeetingBody.LoadVisible = true;
-            this.nextMeetingBody.Location = new System.Drawing.Point(500, 154);
-            this.nextMeetingBody.Name = "nextMeetingBody";
-            this.nextMeetingBody.OutdentVisible = false;
-            this.nextMeetingBody.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang3081{\\fonttbl{\\f0\\fnil\\fcharset204 Microsoft" +
-    " Sans Serif;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs18\\par\r\n}\r\n";
-            this.nextMeetingBody.SaveVisible = true;
-            this.nextMeetingBody.SeparatorAlignVisible = true;
-            this.nextMeetingBody.SeparatorBoldUnderlineItalicVisible = true;
-            this.nextMeetingBody.SeparatorFontColorVisible = true;
-            this.nextMeetingBody.SeparatorFontVisible = true;
-            this.nextMeetingBody.SeparatorIndentAndBulletsVisible = false;
-            this.nextMeetingBody.SeparatorInsertVisible = false;
-            this.nextMeetingBody.SeparatorSaveLoadVisible = true;
-            this.nextMeetingBody.Size = new System.Drawing.Size(623, 187);
-            this.nextMeetingBody.TabIndex = 64;
-            this.nextMeetingBody.ToolStripVisible = true;
-            this.nextMeetingBody.UnderlineVisible = true;
-            this.nextMeetingBody.WordWrapVisible = true;
-            this.nextMeetingBody.ZoomFactorTextVisible = false;
-            this.nextMeetingBody.ZoomInVisible = false;
-            this.nextMeetingBody.ZoomOutVisible = false;
-            this.nextMeetingBody.Load += new System.EventHandler(this.nextMeetingBody_Load);
-            this.nextMeetingBody.Enter += new System.EventHandler(this.nextMeetingBody_Enter);
-            this.nextMeetingBody.Leave += new System.EventHandler(this.nextMeetingBody_Leave);
-            // 
-            // nextmeetingEndTime
-            // 
-            this.nextmeetingEndTime.DropDownHeight = 90;
-            this.nextmeetingEndTime.DropDownWidth = 50;
-            this.nextmeetingEndTime.Font = new System.Drawing.Font("Californian FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextmeetingEndTime.FormattingEnabled = true;
-            this.nextmeetingEndTime.IntegralHeight = false;
-            this.nextmeetingEndTime.Location = new System.Drawing.Point(306, 218);
-            this.nextmeetingEndTime.Name = "nextmeetingEndTime";
-            this.nextmeetingEndTime.Size = new System.Drawing.Size(126, 24);
-            this.nextmeetingEndTime.TabIndex = 66;
-            // 
-            // nextmeetingStartTime
-            // 
-            this.nextmeetingStartTime.DropDownHeight = 90;
-            this.nextmeetingStartTime.DropDownWidth = 50;
-            this.nextmeetingStartTime.Font = new System.Drawing.Font("Californian FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextmeetingStartTime.FormattingEnabled = true;
-            this.nextmeetingStartTime.IntegralHeight = false;
-            this.nextmeetingStartTime.Location = new System.Drawing.Point(306, 184);
-            this.nextmeetingStartTime.Name = "nextmeetingStartTime";
-            this.nextmeetingStartTime.Size = new System.Drawing.Size(126, 24);
-            this.nextmeetingStartTime.TabIndex = 65;
-            // 
             // buttonAttachFile_NextMeeting
             // 
             this.buttonAttachFile_NextMeeting.Font = new System.Drawing.Font("Californian FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -469,9 +472,9 @@
             this.button_Submit.Font = new System.Drawing.Font("Californian FB", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Submit.Location = new System.Drawing.Point(419, 328);
             this.button_Submit.Name = "button_Submit";
-            this.button_Submit.Size = new System.Drawing.Size(83, 23);
+            this.button_Submit.Size = new System.Drawing.Size(75, 23);
             this.button_Submit.TabIndex = 54;
-            this.button_Submit.Text = "Send MOM";
+            this.button_Submit.Text = "Submit";
             this.button_Submit.UseVisualStyleBackColor = true;
             this.button_Submit.Click += new System.EventHandler(this.button_Submit_Click);
             // 
@@ -1115,6 +1118,16 @@
             this.listBox_AssgTo.Size = new System.Drawing.Size(359, 116);
             this.listBox_AssgTo.TabIndex = 52;
             // 
+            // tabPage_note
+            // 
+            this.tabPage_note.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_note.Name = "tabPage_note";
+            this.tabPage_note.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_note.Size = new System.Drawing.Size(1129, 716);
+            this.tabPage_note.TabIndex = 1;
+            this.tabPage_note.Text = "My Notes";
+            this.tabPage_note.UseVisualStyleBackColor = true;
+            // 
             // Name
             // 
             this.Name.HeaderText = "Name";
@@ -1140,7 +1153,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1159, 741);
             this.Controls.Add(this.tabControl_mom);
-            this.MaximizeBox = false;
             //this.Name = "MOM_Form";
             this.Text = "Minutes of Meeting";
             this.tabControl_mom.ResumeLayout(false);
@@ -1178,6 +1190,8 @@
         private System.Windows.Forms.TabControl tabControl_mom;
 
         private System.Windows.Forms.TabPage tabPageCal;
+
+        private System.Windows.Forms.TabPage tabPage_note;
 
         private System.Windows.Forms.Label label1;
 
